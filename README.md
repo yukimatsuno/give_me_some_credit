@@ -1,74 +1,36 @@
-# Data analysis
-- Document here the project: give_me_some_credit
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Part 1 - Data Ingestion
 
-Please document the project the better you can.
+Files location: give_me_some_credit/notebooks/
+Files name: 
+* cron_job.ipynb
+* cronjob.txt
 
-# Startup the project
+Steps:
+1. Open Terminal
+2. Write crontab -e to create crontab
+3. Write the schedule command * 2 * * * /usr/bin/python /path/to/file/cron_job.ipynb to run the python script every day at 2 am.
+    (For Demo, the schedule command is '0 2 * * * /usr/bin/python /home/yuki/code/yukimatsuno/give_me_some_credit/notebooks/cron_job.ipynb' as written in 'cronjob.txt')
+4. Exit edit mode
 
-The initial setup.
+Python script ('cron_job.ipynb'):
+1. Take csv files in '../raw_data/input_folder', data source folder, and create a dataframe
+2. Add rows from the csv files on the current dataframe
+3. Delete csv files in '../raw_data/input_folder', data source folder.
+4. Save the dataframe in '../raw_data' as a 'sample_data.csv'
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+Database:
+For the newly retrieved csv files, the contents of these files will be uploaded to GCP SQL server following steps in this link below,
+so that the data is accessible/readable by multiple data scientists in parallel.
+https://cloud.google.com/sql/docs/mysql/quickstart
 
-Unittest test:
-```bash
-make clean install test
-```
 
-Check for give_me_some_credit in gitlab.com/{group}.
-If your project is not set please add it:
 
-- Create a new project on `gitlab.com/{group}/give_me_some_credit`
-- Then populate it:
+# Part 2 - Understanding the Data
 
-```bash
-##   e.g. if group is "{group}" and project_name is "give_me_some_credit"
-git remote add origin git@github.com:{group}/give_me_some_credit.git
-git push -u origin master
-git push -u origin --tags
-```
+Link for presentation:
+https://docs.google.com/presentation/d/1-GGzOW6ZuIzJ7VYZbPh5p0Q8gFSJQqsPzrBitE-rs6Y/edit?usp=sharing
 
-Functionnal test with a script:
+Link for analysis notebook:
+https://github.com/yukimatsuno/give_me_some_credit
+    (folder: '../notebooks/basic visualization.ipynb')
 
-```bash
-cd
-mkdir tmp
-cd tmp
-give_me_some_credit-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/give_me_some_credit` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/give_me_some_credit.git
-cd give_me_some_credit
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-give_me_some_credit-run
-```
