@@ -17,7 +17,7 @@ for file in files:
         df = pd.concat([df, tmp])
 
 #df
-df.to_csv('../raw_data/sample_data.csv', header=True, index=True)
+df.to_csv('../raw_data/input_folder/sample_data.csv', header=True, index=True)
 
 # For the newly retrieved csv files, the contents of these files will be merged into a single CSV file called `sample_data.csv`
 # The contents of this CSV file will then be uploaded to a cloud SQL server running on Google cloud using the following steps in this link below, so that the data is accessible/readable by multiple data scientists in parallel: 
