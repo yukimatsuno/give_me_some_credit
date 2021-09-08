@@ -40,11 +40,11 @@ Contents
 9. Analysis of each features
     - MonthlyIncome: Fill NA with median, replace outlier with median
     - NumberOfDependents: Fill NA with median, replace outlier with median
-    - Age: Replace age below `22` with `22`
-    - RevolvingUtilizationOfUnsecuredLines: Replace number above `1` with `1`
+    - Age: Replace age `below 22` with `22`
+    - RevolvingUtilizationOfUnsecuredLines: Replace number `above 1` with `1`
     - NumberOfTime30to59DaysPastDueNotWorse: Replace `98` and `96` with median
-    - DebtRatio: Replace number above `1` with `1`
-    - NumberOfOpenCreditLinesAndLoans: Replace number above `20` with `20`
+    - DebtRatio: Replace number `above 1` with `1`
+    - NumberOfOpenCreditLinesAndLoans: Replace number `above 20` with `20`
     - NumberOfTimes90DaysLate: Replace `98` and `96` with median
     - NumberRealEstateLoansOrLines: Replace outlier with median
     - NumberOfTime60to89DaysPastDueNotWorse: Replace `98` and `96 with median
