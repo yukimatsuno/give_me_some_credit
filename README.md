@@ -2,10 +2,10 @@
 
 Files location: `give_me_some_credit/notebooks/`  
 File_name: `cron_job.ipynb`: Does the following:
-1. Take csv files in `../raw_data/input_folder`, data source folder, and create a dataframe
+1. Take csv files in `../data/input_folder`, data source folder, and create a dataframe
 2. Add rows from the csv files on the current dataframe
-3. Delete csv files in `../raw_data/input_folder`, data source folder.
-4. Save the dataframe in `../raw_data` as a `sample_data.csv`
+3. Delete csv files in `../data/input_folder`, data source folder.
+4. Save the dataframe in `../data` as a `sample_data.csv`
 
 `cronjob.txt`: 
 
@@ -27,9 +27,7 @@ https://cloud.google.com/sql/docs/mysql/quickstart
 
 # Part 2 - Understanding the Data
 
-* Link for analysis notebook:
-https://github.com/yukimatsuno/give_me_some_credit
-    (folder: `../notebooks/basic visualization.ipynb`)
+* Analysis notebook: `/give_me_some_credit/notebooks/basic visualization.ipynb`  
 Contents
 1. Import csv files 
 2. Initial exploration/ Data dictionary: Explanation about data
