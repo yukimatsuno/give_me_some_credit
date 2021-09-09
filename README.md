@@ -40,28 +40,34 @@ The part about visualizing data is written in `/give_me_some_credit/notebooks/ba
 7. Exploring correlations with heatmap  
 ![image](https://user-images.githubusercontent.com/79320522/132685393-5f215ce4-1ccc-4e5f-925a-a201d22c54cf.png)
 
-8. Check balanced/imbalanced of `SeriousDlqin2yrs` the outcome variable
-![image](https://user-images.githubusercontent.com/79320522/132685693-bb4e0f3c-0215-460e-8242-dbb5d0bb6d5b.png)
+8. Visualize data  
+`Yes`: Person experienced 90 days past due delinquency or worse  
+`No`: Person did not experience 90 days past due delinquency or worse
+![image](https://user-images.githubusercontent.com/79320522/132704318-28202d22-3ed0-41e1-8e5d-203052268958.png)
+![image](https://user-images.githubusercontent.com/79320522/132704402-422e24cf-3221-45e4-ad46-c32d5458b9b0.png)
+![image](https://user-images.githubusercontent.com/79320522/132704467-8a7c5bf3-402e-4180-b7f4-7231edffed67.png)
 
-9. Analysis of each feature:
+9. Check balanced/imbalanced of `SeriousDlqin2yrs`, the outcome variable
+![image](https://user-images.githubusercontent.com/79320522/132685693-bb4e0f3c-0215-460e-8242-dbb5d0bb6d5b.png)
+10. Analysis of each feature:
     - MonthlyIncome: Fill `NaN` with median, replace outlier with median because there are big outliers. Mean is affected by outliers and tend to higher than median.
     - NumberOfDependents: Fill `NaN` with median, replace outlier to reduce noise.
-    - Age: Replace age `below 22` with `22` because there is one "0" input outlier and except this outlier, the youngest age is "22".
-    - RevolvingUtilizationOfUnsecuredLines: Replace number `above 1` with `1` because generally input should be between 0 and 1.
-    - NumberOfTime30to59DaysPastDueNotWorse: Replace outliers. `98` and `96`, with median. The other data points are between 0 and 13.
-    - DebtRatio: Replace number `above 1` with `1` to group `above 1` as people who have more debt than income. Most data points are under 1. 
+    - Age: Replace age `below 22` with `22` because there is one `0` input outlier and except this outlier, the youngest age is `22`.
+    - RevolvingUtilizationOfUnsecuredLines: Replace number `above 1` with `1` because generally input should be between `0` and `1`.
+    - NumberOfTime30to59DaysPastDueNotWorse: Replace outliers. `98` and `96`, with median. The other data points are between `0` and `13`.
+    - DebtRatio: Replace number `above 1` with `1` to group `above 1` as people who have more debt than income. Most data points are under `1`. 
     - NumberOfOpenCreditLinesAndLoans: Replace number `above 20` with `20` to reduce noise though there is no limit for this feature. 
-    - NumberOfTimes90DaysLate: Replace `98` and `96` with median because Data points are between 0 and 17, and "98" and "96" are outliers.
-    - NumberRealEstateLoansOrLines: Replace outlier with median to reduce noise. Mostly data points are between 0 and 2.
-    - NumberOfTime60to89DaysPastDueNotWorse: Replace `98` and `96 with median because most data points are between 0 and 11, and "98" and "96" are outliers.
-10. Visualize all features without outliers  
+    - NumberOfTimes90DaysLate: Replace `98` and `96` with median because Data points are between `0` and `17`, and `98` and `96` are outliers.
+    - NumberRealEstateLoansOrLines: Replace outlier with median to reduce noise. Mostly data points are between `0` and `2`.
+    - NumberOfTime60to89DaysPastDueNotWorse: Replace `98` and `96` with median because most data points are between `0` and `11`, and `98` and `96` are outliers.
+11. Visualize all features without outliers  
 ![image](https://user-images.githubusercontent.com/79320522/132684522-c57ee333-a4b5-4ad0-90b4-7bd64099e06a.png)  
 ![image](https://user-images.githubusercontent.com/79320522/132684565-67f88ded-2122-4529-8fdb-16f613ea61dd.png)
 
-11. Rebalance the outcome variable to find the relation between `SeriousDlqin2yrs` the outcome variable and each feature.
-12. Visualize rebalanced data![image](https://user-images.githubusercontent.com/79320522/132684950-66c7992e-ada6-451c-8aa9-a8242ededbdb.png)  
+12. Rebalance the outcome variable to find the relation between `SeriousDlqin2yrs` the outcome variable and each feature.
+13. Visualize rebalanced data![image](https://user-images.githubusercontent.com/79320522/132684950-66c7992e-ada6-451c-8aa9-a8242ededbdb.png)  
 ![image](https://user-images.githubusercontent.com/79320522/132685018-fcf1b518-af99-4b37-91cc-bcf0be472ea8.png)
-13. Explore corelations of rebalanced data with heatmap  
+14. Explore corelations of rebalanced data with heatmap  
 ![image](https://user-images.githubusercontent.com/79320522/132687367-3da79a4f-1eaa-4846-aa8a-fd82fa4a7fca.png)
 
 
