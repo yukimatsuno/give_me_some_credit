@@ -1,9 +1,13 @@
 # Part 1 - Data Ingestion
 
-Files location: give_me_some_credit/notebooks/
-Files name: 
-* cron_job.ipynb
-* cronjob.txt
+Files location: give_me_some_credit/notebooks/file_name: 
+* cron_job.ipynb: Does the following:
+1. Take csv files in '../raw_data/input_folder', data source folder, and create a dataframe
+2. Add rows from the csv files on the current dataframe
+3. Delete csv files in '../raw_data/input_folder', data source folder.
+4. Save the dataframe in '../raw_data' as a 'sample_data.csv'
+
+* cronjob.txt: 
 
 Steps:
 1. Open Terminal
@@ -13,10 +17,6 @@ Steps:
 4. Exit edit mode
 
 Python script ('cron_job.ipynb'):
-1. Take csv files in '../raw_data/input_folder', data source folder, and create a dataframe
-2. Add rows from the csv files on the current dataframe
-3. Delete csv files in '../raw_data/input_folder', data source folder.
-4. Save the dataframe in '../raw_data' as a 'sample_data.csv'
 
 Database:
 For the newly retrieved csv files, the contents of these files will be uploaded to GCP SQL server following steps in this link below,
