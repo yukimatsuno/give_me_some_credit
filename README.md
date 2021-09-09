@@ -37,23 +37,33 @@ The part about visualizing data is written in `/give_me_some_credit/notebooks/ba
 4. Drop unnecessary columns: Drop `Unnamed: 0` because it's unnecessary (has no information)
 5. Data inspection: Check columns name, data shape, non-null count and data type.
 6. Duplicates check
-7. Exploring corelations with heatmap
+7. Exploring correlations with heatmap  
+![image](https://user-images.githubusercontent.com/79320522/132685393-5f215ce4-1ccc-4e5f-925a-a201d22c54cf.png)
+
 8. Check balanced/imbalanced of `SeriousDlqin2yrs` the outcome variable
+![image](https://user-images.githubusercontent.com/79320522/132685693-bb4e0f3c-0215-460e-8242-dbb5d0bb6d5b.png)
+
 9. Analysis of each feature:
-    - MonthlyIncome: Fill `NaN` with median, replace outlier with median
-    - NumberOfDependents: Fill `NaN` with median, replace outlier with median
-    - Age: Replace age `below 22` with `22`
-    - RevolvingUtilizationOfUnsecuredLines: Replace number `above 1` with `1`
-    - NumberOfTime30to59DaysPastDueNotWorse: Replace `98` and `96` with median
-    - DebtRatio: Replace number `above 1` with `1`
-    - NumberOfOpenCreditLinesAndLoans: Replace number `above 20` with `20`
-    - NumberOfTimes90DaysLate: Replace `98` and `96` with median
-    - NumberRealEstateLoansOrLines: Replace outlier with median
-    - NumberOfTime60to89DaysPastDueNotWorse: Replace `98` and `96 with median
-10. Visualize all features without outliers
-11. Rebalance the outcome variable
-12. Visualize rebalanced data
-13. Explore corelations of rebalanced data with heatmap
+    - MonthlyIncome: Fill `NaN` with median, replace outlier with median because there are big outliers. Mean is affected by outliers and tend to higher than median.
+    - NumberOfDependents: Fill `NaN` with median, replace outlier to reduce noise.
+    - Age: Replace age `below 22` with `22` because there is one "0" input outlier and except this outlier, the youngest age is "22".
+    - RevolvingUtilizationOfUnsecuredLines: Replace number `above 1` with `1` because generally input should be between 0 and 1.
+    - NumberOfTime30to59DaysPastDueNotWorse: Replace outliers. `98` and `96`, with median. The other data points are between 0 and 13.
+    - DebtRatio: Replace number `above 1` with `1` to group `above 1` as people who have more debt than income. Most data points are under 1. 
+    - NumberOfOpenCreditLinesAndLoans: Replace number `above 20` with `20` to reduce noise though there is no limit for this feature. 
+    - NumberOfTimes90DaysLate: Replace `98` and `96` with median because Data points are between 0 and 17, and "98" and "96" are outliers.
+    - NumberRealEstateLoansOrLines: Replace outlier with median to reduce noise. Mostly data points are between 0 and 2.
+    - NumberOfTime60to89DaysPastDueNotWorse: Replace `98` and `96 with median because most data points are between 0 and 11, and "98" and "96" are outliers.
+10. Visualize all features without outliers  
+![image](https://user-images.githubusercontent.com/79320522/132684522-c57ee333-a4b5-4ad0-90b4-7bd64099e06a.png)  
+![image](https://user-images.githubusercontent.com/79320522/132684565-67f88ded-2122-4529-8fdb-16f613ea61dd.png)
+
+11. Rebalance the outcome variable to find the relation between `SeriousDlqin2yrs` the outcome variable and each feature.
+12. Visualize rebalanced data![image](https://user-images.githubusercontent.com/79320522/132684950-66c7992e-ada6-451c-8aa9-a8242ededbdb.png)  
+![image](https://user-images.githubusercontent.com/79320522/132685018-fcf1b518-af99-4b37-91cc-bcf0be472ea8.png)
+13. Explore corelations of rebalanced data with heatmap  
+![image](https://user-images.githubusercontent.com/79320522/132687367-3da79a4f-1eaa-4846-aa8a-fd82fa4a7fca.png)
+
 
 * Link to presentation:
 [presentation](https://docs.google.com/presentation/d/1-GGzOW6ZuIzJ7VYZbPh5p0Q8gFSJQqsPzrBitE-rs6Y/edit?usp=sharing)
