@@ -21,7 +21,7 @@ There are two files related to managing and uploading data.
 1. Open Terminal
 2. Write crontab -e to create crontab
 3. Write the schedule command mentioned in `notebooks/cronjob.txt` file and copy paste it. It runs the python script every day at 2 am.
-    (For Demo, the schedule command is `0 2 * * * /usr/bin/python /home/yuki/code/yukimatsuno/give_me_some_credit/notebooks/cron_job.ipynb` as written in `cronjob.txt`)
+    (For Demo, the schedule command is `0 2 * * * /usr/bin/python /home/yuki/code/yukimatsuno/give_me_some_credit/notebooks/cron-upload-to-gcp.py` as written in `cronjob.txt`)
 4. Exit edit mode
 
 
