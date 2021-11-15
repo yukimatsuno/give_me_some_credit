@@ -70,6 +70,29 @@ The part about visualizing data is written in `/give_me_some_credit/notebooks/ba
 14. Explore corelations of rebalanced data with heatmap  
 ![image](https://user-images.githubusercontent.com/79320522/132687367-3da79a4f-1eaa-4846-aa8a-fd82fa4a7fca.png)
 
+### Findings
+1. Correlation among columns
+SeriousDlqin2yrs & RevolvingUtilizationOfUnsecuredLines: 51.8%
+NumberOfOpenCreditLinesAndLoans & NumberRealEstateLoansOrLines: 47.7%
+SeriousDlqin2yrs & NumberOfTime30to59DaysPastDueNotWorse: 37.1%
+After handling outlier and resampling, column 'SeriousDlqin2yrs' has some correlation with 'RevolvingUtilizationOfUnsecuredLines'.
+
+2. As 'RevolvingUtilizationOfUnsecuredLines' increases, the number of ‘yes’ for 'SeriousDlqin2yrs'  (person who experienced 90 days past due delinquency or worse) increases clearly, while the number of ‘no’ decreases
+3. From the relation between ‘age’ and ‘SeriousDlqin2yrs’, people who experienced 90 days past due delinquency or worse tend to belong in the younger generation.
+4. When ‘NumberOfOpenCreditLinesAndLoans’ is between from 0 to 4, the number of ‘yes’ of  ‘SeriousDlqin2yrs’ exceeds the number of ‘no’, but after 5, the number of ‘no’ exceeds the number of ‘yes’.
+5. If column `number of times 90 days late` is more than 1, column `SeriousDlqin2yrs` (person experienced 90 days past due delinquency or worse) tends to be ‘yes’. It is more than the number of ‘no’.
+6.  As the number of ‘NumberRealEstateLoansOrLines’ increases, the percentage of 'No' for ‘SeriousDlqin2yrs’ increases.
+7.  As the number of ‘NumberOfTime30to59DaysPastDueNotWorse’ increases, the ratio of ‘yes’ of ‘SeriousDlqin2yrs’ to NO's increases.
+
+### Summary
+* ‘MonthlyIncome’ and ‘NumberOfDependents’  have data points without values (‘null’)
+* There are duplicated data
+* All features have outliers to be handled
+* Some columns  are strongly correlated in initial data
+* After  handling all duplicated data, null and outliers, though the initial strong correlation is not observed, there are characteristic correlations such as: 
+    * People who experience 90 days past due delinquency or worse tend to have the less balance rate of the credit cards and personal credit lines against credit limit. 
+    * People who experience 90 days past due delinquency or worse tend to be the younger generation. 
+    * People who have more mortgage and real estate loans are unlikely to face 90 days past due delinquency or worse.
 
 * Link to presentation:
 [presentation](https://docs.google.com/presentation/d/1-GGzOW6ZuIzJ7VYZbPh5p0Q8gFSJQqsPzrBitE-rs6Y/edit?usp=sharing)
